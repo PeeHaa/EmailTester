@@ -2,19 +2,23 @@
 <html>
     <head>
         <title>Email regex pattern tester</title>
+        <meta charset="utf-8">
+        <script>'article aside footer header main nav section time'.replace(/\w+/g,function(n){document.createElement(n)})</script>
+        <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+        <link href="/style/style.css" rel="stylesheet" type="text/css" media="screen"></style>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     </head>
     <body>
         <header>
-            <h1>Email regex pattern tester</h1>
-            <p>An effort to stop crappy regex patterns from spreading</p>
+            <div class="content">
+                <h1>Email regex pattern tester</h1>
+                <p>An effort to stop crappy regex patterns from spreading</p>
+            </div>
         </header>
         <main>
-            <?php echo $content; ?>
+            <div class="content">
+                <?php echo $content; ?>
+            </div>
         </main>
-        <footer>
-            <ul>
-                <li>Copyright © <?php echo (new DateTime())->format('Y'); ?> <a href="https://pieterhordijk.com">Pieter Hordijk</a></li>
-            </ul>
-        </footer>
     </body>
 </html>

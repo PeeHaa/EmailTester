@@ -1,0 +1,141 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, main, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.content {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    background: #000000;
+    height: 60px;
+    color: #ffffff;
+}
+
+header h1 {
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+}
+
+header p {
+    position: relative;
+    top: 12px;
+}
+
+main form {
+    margin-top: 250px;
+    text-align: center;
+}
+
+main form input {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+main form input[type="text"] {
+    width: 650px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 0;
+    border-left: 1px solid gray;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+main form input[type="submit"] {
+    margin-left: 0;
+    border-left: 0;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-radius: 0 5px 5px 0;
+    height: 43px;
+    position: relative;
+    top: -7px;
+    outline: none;
+    cursor: pointer;
+}
+
+main h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+main h2 code {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 0 4px;
+    background: #eeeeee;
+    white-space: nowrap;
+    font-family: monospace;
+}
+
+main h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+main table {
+    margin: 20px 0;
+    border: 1px solid #d3d3d3;
+}
+
+main table th, main table td {
+    text-align: left;
+    padding: 5px;
+}
+
+main table tr.pass td {
+    background: #dff0c8;
+}
+
+main table tr.fail td {
+    background: #f2dede;
+}
