@@ -1,0 +1,3 @@
+[submodule ".\\vendor2"]
+	path = .\\vendor2
+	url = git@github.com:rdlowrey/Artax.git
