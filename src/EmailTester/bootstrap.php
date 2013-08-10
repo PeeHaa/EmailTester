@@ -18,5 +18,3 @@ require_once __DIR__ . '/Core/Autoloader.php';
 
 $autoloader = new Autoloader(__NAMESPACE__, dirname(__DIR__));
 $autoloader->register();
-
-require_once __DIR__ . '/../../vendor/Artax/autoload.php';
