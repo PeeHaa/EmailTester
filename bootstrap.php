@@ -13,7 +13,13 @@
 namespace EmailTester;
 
 use EmailTester\Core\Autoloader,
-    EmailTester\Http\Request;
+    EmailTester\Http\Request,
+    EmailTester\Storage\Pattern as PatternStorage;
+
+/**
+ * Redox prevention
+ */
+set_time_limit(30);
 
 /**
  * Bootstrap the PitchBlade library
@@ -26,6 +32,13 @@ require_once __DIR__ . '/src/EmailTester/bootstrap.php';
 require_once __DIR__ . '/init.deployment.php';
 
 /**
+ * Prevent rendering of templates when on CLI
+ */
+if(php_sapi_name() === 'cli') {
+    return;
+}
+
+/**
  * Setup the request object
  */
 $request = new Request($_SERVER, $_GET, $_POST, $_COOKIE);
@@ -33,8 +46,26 @@ $request = new Request($_SERVER, $_GET, $_POST, $_COOKIE);
 /**
  * Get the template
  */
-if ($request->getMethod() == 'GET' && $request->getPath() == '/test') {
-    $template = __DIR__ . '/templates/home.phtml';
+$patternOrUrl = $request->getPostVariable('patternOrUrl', null);
+if ($request->getMethod() == 'POST' && $request->getPath() == '/test' && $patternOrUrl !== null && preg_match('#^http[s]?://stackoverflow.com/#', $patternOrUrl) === 1) {
+    $url = $request->isSsl() ? 'https://' : 'http://';
+    $url.= $request->getHost();
+    $url.= '/test-url/' . rawurlencode($patternOrUrl);
+
+    header('Location: ' . $url);
+    exit;
+} elseif ($request->getMethod() == 'POST' && $request->getPath() == '/test' && $patternOrUrl !== null && preg_match('#^http[s]?://stackoverflow.com/#', $patternOrUrl) !== 1) {
+    $pattern = new PatternStorage($dbConnection);
+    $id = $pattern->getId($patternOrUrl);
+
+    $url = $request->isSsl() ? 'https://' : 'http://';
+    $url.= $request->getHost();
+    $url.= '/test-pattern/' . $id;
+
+    header('Location: ' . $url);
+    exit;
+} elseif ($request->getMethod() == 'GET' && strpos($request->getPath(), '/test-pattern') === 0) {
+    $template = __DIR__ . '/templates/pattern.phtml';
 } else {
     $template = __DIR__ . '/templates/home.phtml';
 }
