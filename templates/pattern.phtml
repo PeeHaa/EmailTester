@@ -20,7 +20,7 @@ $invalidAddresses = $addressStorage->getInvalid();
 
 <?php if (@preg_match($pattern, 'whatever') === false) { ?>
     <p class="invalid">Invalid regex pattern supplied!</p>
-<?php } return; ?>
+<?php return; }  ?>
 
 <h3>Valid emailaddresses</h3>
 
