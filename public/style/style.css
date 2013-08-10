@@ -112,8 +112,9 @@ main h2 code {
     border-radius: 4px;
     padding: 0 4px;
     background: #eeeeee;
-    white-space: nowrap;
     font-family: monospace;
+    display: inline-block;
+    max-width: 950px;
 }
 
 main h3 {
@@ -125,6 +126,7 @@ main h3 {
 main table {
     margin: 20px 0;
     border: 1px solid #d3d3d3;
+    width: 960px;
 }
 
 main table th, main table td {
