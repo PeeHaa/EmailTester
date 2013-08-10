@@ -1,7 +1,7 @@
 EmailTester
 =
 
-A service to test regex patterns against valid and invalid emailaddresses.
+A service to test regex patterns against valid and invalid emailaddresses. Check out the [demo][demo].
 
 Requirements
 -
@@ -50,3 +50,5 @@ Run `get_addresses.php` from the CLI to get a nice list of valid and invalid ema
 Copy `/EmailTester/init.example.php` to `/EmailTester/init.production.php` and setup the db settings and error reporting.
 
 Change the environment file in `/EmailTester/init.deployment.php`
+
+[demo]:https://emailtester.pieterhordijk.com
