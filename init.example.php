@@ -25,3 +25,8 @@ $dbConnection = new \PDO(
         \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
     ]
 );
+
+/**
+ * Setup Google Analytics
+ */
+$gaCode = null;
