@@ -18,7 +18,7 @@ class FightingForALostCauseRetriever implements Retriever
     /**
      * Constant defining the URL to parse
      */
-    const URL = 'http://fightingforalostcause.net/misc/2006/compare-email-regex.php';
+    const URL = 'https://fightingforalostcause.net/content/misc/2006/compare-email-regex.php';
 
     /**
      * Retrieves the addresses from a website
